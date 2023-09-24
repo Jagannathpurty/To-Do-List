@@ -1,0 +1,106 @@
+/* 
+.navbar,.nav_items{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    background-color: brown;
+
+} */
+
+html,body{
+    padding: 0;
+    margin: 0;
+    background-color: aqua;
+}
+
+.navbar{
+    background-color: red;
+    display: flex;
+    align-items: center;
+}
+#brand{
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.navbar .nav_items .nav_item .nav_link{
+    margin: 5px;
+    text-decoration: none;
+
+}
+.nav_link:hover{
+    background-color: aliceblue;
+    border-radius: 5px;
+
+}
+#Login{
+    padding: 7px;
+    border: 2px solid #fff;
+    background: transparent;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+
+}
+.container{
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    cursor: pointer;
+    background-color: white;
+    max-width: 250px;
+    max-height: 400px;
+    border-radius: 5px;
+}
+h2{
+    text-align: center;
+}
+ul li{
+list-style: none;
+}
+.InputBox{
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    background-color: #ccc;
+    display: flex;
+    width: 200px;
+    border-radius: 6px;
+    
+
+   
+}
+#input-box{
+    border-radius: 10px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    outline: none;
+    
+}
+button{
+    background-color: blue;
+    height: 30px;
+    border-radius: 10px;
+    width: 50px;
+    cursor: pointer;
+}
+span{
+    float: right;
+    margin-right: 10px;
+    cursor: pointer;
+    display: block;
+    
+}
+span:hover{
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+.checked{
+    text-decoration: line-through;
+
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <link rel="stylesheet" href="css/form.css">
+    <link href=" https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.0.8/css/line.min.css " rel="stylesheet">
+</head>
+<body>
+    
+
+
+    <nav class="navbar">
+        <a href="" id="brand">Jaga editz</a>
+        <ul class="nav_items">
+            <div class="li nav_item">
+                <a href="" class="nav_link">
+
+                </a>    
+                <a href="" class="nav_link">Home</a>
+                <a href="" class="nav_link"> About</a>
+                <a href="" class="nav_link">Contact</a>
+                <a href="" class="nav_link">Address</a>
+            </div>
+            
+        </ul>
+
+        <button id="Login" type="Submit">Login</button>
+       
+    </nav>
+
+
+    <div class="container">
+       <h2> To Do list</h2>
+       <div class="InputBox">
+        <input type="text " id="input-box">
+        <button onclick="Addtask()">Add</button>
+       </div>
+        <ul id="listContainer">
+            <!-- <li class="list-items">Hello </li>
+            <li class="list-items">Hello </li>
+            <li class="list-items">Hello </li>
+            <li class="list-items">Hello </li> -->
+        </ul>
+    </div>
+    
+    
+
+
+
+
+    <script>
+
+
+        const inputBox=document.getElementById("input-box"),
+        listcontainer=document.getElementById("listContainer")
+
+
+        function Addtask(){
+            if(inputBox.value ===""){
+                alert("Enter any iems of this box")
+            }
+            else{
+             let li=document.createElement("li")
+             li.innerHTML=inputBox.value
+             listcontainer.appendChild(li)
+             let span=document.createElement("span")
+                span.innerHTML="\u00d7"
+                li.appendChild(span)
+               
+
+
+            }
+            inputBox.value=""
+            SaveData();
+
+           
+        }
+
+
+        
+       listcontainer.addEventListener("click", (e)=>{
+        if(e.target.tagName==="LI"){
+            e.target.classList.toggle("checked");
+            SaveData();
+        }
+        else if(e.target.tagName==="SPAN"){
+            e.target.parentElement.remove();
+            SaveData();
+        }
+
+
+       },false);
+
+
+       function SaveData(){
+        localStorage.setItem("data", listcontainer.innerHTML)
+       }
+
+
+       function ShowTask(){
+        listcontainer.innerHTML=localStorage.getItem("data")
+       }
+
+       ShowTask();
+        
+    </script>
+</body>
+</html>
